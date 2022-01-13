@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd or Even</title>
+   <style>
+        *{
+            margin-top: 1.5%;
+            margin-bottom: 2.5%;
+            margin-left:1%;
+            margin-right:1%;
+        }
+        fieldset{
+            text-align: center;
+            border-radius: 2%; 
+            border-width: 10px;
+        }    
+        legend{
+            width:50%;
+        }
+        #oddeven{
+            text-align: center;
+
+        }
+        #myInput{
+            font-size: 40px;
+            border:2px solid;
+        }
+        #sub{
+            font-weight: 600;
+            font-size: 40px;
+            border:2px solid;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend><h1>Check whether the number is odd or even</h1></legend>
+        <form id="oddeven" onsubmit="event.preventDefault(); validateNumber()">
+            <input type="text" placeholder="Input a number" id="myInput" />
+            <input type="submit" value="CHECK" id="sub"/>
+        </form>
+    </fieldset>
+    <script> 
+        function validateNumber()
+        {                          
+            myEntry=document.getElementById('myInput').value;   
+            if (myEntry == '')
+            {                               
+                alert('Enter a number!!');
+                return false;                                
+            }
+            if (myEntry != Number(myEntry))
+            {                  
+                 alert('Please insert number only.');
+                 return false;
+            }
+            else
+            {
+                if (myEntry % 2 == 0)
+                {                         
+                    alert('The number '+myEntry+' is even.');
+                 }
+                else
+                {
+                    alert('The number '+myEntry+' is odd.');
+                } 
+            }
+            document.getElementById('oddeven').submit();
+        }       
+    </script>
+</body>
+</html>
